@@ -1,0 +1,153 @@
+@use "variables" as var;
+@use "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  max-width: 100vw;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: var.$font;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var.$secondary-color;
+}
+li {
+  list-style: none;
+}
+
+.header {
+  background: var.$popup-color;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+  &__navbar {
+    position: absolute;
+    top: 100%;
+    left: -120%;
+    width: 100%;
+    background: var.$popup-color;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+    min-height: 100vh;
+  }
+
+  &__menu-bar {
+    font-size: 2.5rem;
+
+    color: var.$secondary-color;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+
+  .header__menuBar {
+    font-size: 2.5rem;
+
+    #header__menu-bar {
+      @include mixins.for-size(tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__logo {
+    height: 35px;
+    margin-left: 20px;
+    &:hover {
+      cursor: pointer;
+    }
+    @include mixins.for-size(tablet) {
+      height: 50px;
+    }
+    @include mixins.for-size(laptop) {
+      height: 80px;
+    }
+  }
+}
+
+.links {
+  font-size: 2rem;
+  background: var.$popup-color;
+  padding: 1.5rem;
+  margin: 1.5rem;
+  display: block;
+  text-align: center;
+  &:hover {
+    color: var.$icon-hover;
+  }
+  @include mixins.for-size(tablet) {
+    font-size: 1.7rem;
+  }
+  @include mixins.for-size(laptop) {
+    font-size: 2.3rem;
+  }
+}
+
+.header__navbar {
+  @include mixins.for-size(tablet) {
+    display: flex;
+    position: relative;
+    left: 0%;
+    background: none;
+    border-top: none;
+    margin-left: auto;
+    width: auto;
+    min-height: 0;
+  }
+}
+
+.header__navbar.active {
+  left: 0;
+  display: inline;
+  top: 8rem;
+  z-index: 100;
+}
+
+.icons__search,
+.icons__shoppingbag {
+  font-size: 2.5rem;
+  color: var.$secondary-color;
+  @include mixins.for-size(tablet) {
+    font-size: 2.8rem;
+  }
+  @include mixins.for-size(laptop) {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+}
+
+.icons__search:hover,
+.icons__shoppingbag:hover {
+  color: var.$icon-hover;
+}
+
+.btn .badge {
+  background-color: var.$icon-hover;
+  left: -6px;
+  top: -2px;
+  font-size: 1rem;
+  color: var.$secondary-color;
+  @include mixins.for-size(tablet) {
+    font-size: 1.3rem;
+    left: -10px;
+    top: -15px;
+  }
+  @include mixins.for-size(laptop) {
+    font-size: 1.5rem;
+    left: -8px;
+    top: -7px;
+  }
+}

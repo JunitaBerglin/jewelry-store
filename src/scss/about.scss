@@ -1,0 +1,75 @@
+@use "header";
+@use "footer";
+@use "cartmodal";
+@use "mixins";
+@use "variables" as var;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  transition: all 0.1s linear;
+  font-family: var.$font;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include mixins.for-size(laptop) {
+    display: flex;
+    flex-direction: row;
+    padding: 5rem;
+    min-height: 70vh;
+  }
+}
+
+.aboutImgWrapper {
+  text-align: center;
+}
+
+.aboutTextWrapper {
+  padding: 20px;
+
+  @include mixins.for-size(tablet) {
+    padding: 20px;
+    width: 600px;
+    margin-left: 50px;
+  }
+  @include mixins.for-size(laptop) {
+    margin-left: 2rem;
+    width: 600px;
+  }
+}
+
+.aboutImg {
+  height: auto;
+  width: 400px;
+  padding: 3rem;
+  @include mixins.for-size(laptop) {
+    width: 500px;
+  }
+}
+
+.aboutText {
+  font-size: 14px;
+  white-space: pre-line;
+  @include mixins.for-size(laptop) {
+    font-size: 1.8rem;
+  }
+}
+
+.aboutTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var.$title-font;
+}

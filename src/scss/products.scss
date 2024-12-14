@@ -1,0 +1,175 @@
+@use "header";
+@use "footer";
+@use "cartmodal";
+@use "variables" as var;
+@use "mixins";
+
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 30vw;
+  @include mixins.for-size(tablet) {
+    width: 30vw;
+    height: 5vh;
+  }
+  @include mixins.for-size(laptop) {
+    width: 20vw;
+    height: 7vh;
+    margin: 20px;
+  }
+}
+.sort__btn,
+.filter__btn {
+  margin: 10px;
+  font-size: 1.5rem;
+  @include mixins.for-size(tablet) {
+    font-size: 2rem;
+  }
+}
+
+.sort__az,
+.sort__za,
+.sort__pricehtol,
+.sort__priceltoh,
+.sort__reset,
+.filter__all,
+.filter__rings,
+.filter__necklaces,
+.filter__bracelets,
+.filter__earrings {
+  font-size: 1.5rem;
+  @include mixins.for-size(tablet) {
+    font-size: 2rem;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  @include mixins.for-size(laptop) {
+    justify-content: space-between;
+  }
+}
+
+.allProductsContainer {
+  @include mixins.for-size(tablet) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.allProductsContainerFilter {
+  @include mixins.for-size(tablet) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100vw;
+
+  @include mixins.for-size(tablet) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+
+  @include mixins.for-size(tablet) {
+    width: 30%;
+  }
+  @include mixins.for-size(laptop) {
+    width: 25%;
+  }
+
+  &__name {
+    font-family: var.$title-font;
+    font-size: 1.5rem;
+    text-align: center;
+    @include mixins.for-size(tablet) {
+      font-size: 2rem;
+    }
+    @include mixins.for-size(laptop) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__type {
+    font-family: var.$font;
+    font-size: 1rem;
+    @include mixins.for-size(laptop) {
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+  }
+
+  &__img,
+  &__img--second {
+    width: 100%;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__price {
+    font-family: var.$font;
+    font-size: 1.5rem;
+    @include mixins.for-size(laptop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__btn {
+    font-size: 0.8rem;
+    padding: 3px 6px;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    @include mixins.for-size(tablet) {
+      font-size: 1rem;
+    }
+    @include mixins.for-size(laptop) {
+      font-size: 2rem;
+      padding: 5px;
+    }
+  }
+}
+
+.productimgcontainer {
+  position: relative;
+  width: 50%;
+  @include mixins.for-size(tablet) {
+    width: 70%;
+  }
+}
+
+:root {
+  --black: black;
+  --orange: #e7cab3;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}

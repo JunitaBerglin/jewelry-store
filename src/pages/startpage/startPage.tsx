@@ -1,21 +1,18 @@
-import React, { useEffect } from "react";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
-import { AboutUs } from "../AboutUs";
-import { ProductSpotlight } from "../ProductSpotlight";
-import { Carousel } from "../Carousel";
+import React from "react";
+import { Footer } from "../../components/footer/footer";
+import { Header } from "../../components/header";
+import "../../scss/startpage.scss";
+import { Carousel } from "../../components/carousel";
+import { Spotlight } from "../../components/spotlight";
+import { ProductGrid } from "../../components/productgrid";
 
 const StartPage: React.FC = () => {
-  useEffect(() => {
-    // Any additional logic for initialization
-  }, []);
-
   return (
     <div className="startpage">
       <Header />
       <Carousel />
-      <AboutUs />
-      <ProductSpotlight />
+      <Spotlight />
+      <ProductGrid />
       <Footer />
     </div>
   );
