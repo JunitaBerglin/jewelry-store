@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/_header.scss";
-import useCart from "../../context/useCart";
+import useCart from "../../context/usecart";
 
 export const Header: React.FC = () => {
   const { cartCount } = useCart();
@@ -14,19 +14,13 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <nav className="header__nav">
-        <Link to="/" className="header__logo">
+        <Link to="/">
           <img
             src="https://i.ibb.co/0f6g50Q/aurora-logo-2.png"
             alt="Aurora Jewelry Logo"
+            width="200"
           />
         </Link>
-        <button
-          className="header__menu-bar"
-          onClick={toggleHamburgerMenu}
-          aria-label="Toggle Menu"
-        >
-          ☰
-        </button>
         <ul className={`header__navbar ${menuOpen ? "active" : ""}`}>
           <li className="links">
             <Link to="/">Home</Link>
@@ -41,22 +35,28 @@ export const Header: React.FC = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        <div className="header__icons">
+        <div className="header__icon">
           <Link
             to="/cart"
             aria-label="Shopping Cart"
             id="openCart"
             className="icons__shoppingbag"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
           >
             <i className="fa fa-shopping-bag"></i>
             <span className="cart-badge badge rounded-pill" id="badgeOnCart">
               {cartCount > 0 ? cartCount : ""}
             </span>
           </Link>
-          <Link to="/search" className="icons__search">
-            <i className="fas fa-search"></i>
-          </Link>
         </div>
+        <button
+          className="header__menu-bar"
+          onClick={toggleHamburgerMenu}
+          aria-label="Toggle Menu"
+        >
+          ☰
+        </button>
       </nav>
     </header>
   );

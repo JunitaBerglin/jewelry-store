@@ -28,22 +28,6 @@
   }
 }
 
-.sort__az,
-.sort__za,
-.sort__pricehtol,
-.sort__priceltoh,
-.sort__reset,
-.filter__all,
-.filter__rings,
-.filter__necklaces,
-.filter__bracelets,
-.filter__earrings {
-  font-size: 1.5rem;
-  @include mixins.for-size(tablet) {
-    font-size: 2rem;
-  }
-}
-
 .row {
   display: flex;
   justify-content: center;

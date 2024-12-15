@@ -1,3 +1,8 @@
-import { ProductList } from "../../components/products";
+import "../../scss/products.scss";
+import React from "react";
 
-export const ProductsPage: React.FC = () => <ProductList />;
+const ProductsPage: React.FC = () => {
+  return <h1>Products Page</h1>;
+};
+
+export { ProductsPage };

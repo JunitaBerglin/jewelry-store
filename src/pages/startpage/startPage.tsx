@@ -8,13 +8,15 @@ import { ProductGrid } from "../../components/productgrid";
 
 const StartPage: React.FC = () => {
   return (
-    <div className="startpage">
+    <>
       <Header />
-      <Carousel />
-      <Spotlight />
-      <ProductGrid />
+      <article className="main">
+        <Carousel />
+        <Spotlight />
+        <ProductGrid />
+      </article>
       <Footer />
-    </div>
+    </>
   );
 };
 
