@@ -1,37 +1,61 @@
 import React, { createContext, useState, ReactNode } from "react";
+import { Product } from "../models/Product";
+
+interface CartItem {
+  product: Product;
+  quantity: number;
+}
 
 interface CartContextType {
-  cartCount: number;
-  addToCart: (amount: number) => void;
-  removeFromCart: (amount: number) => void;
+  cartItems: CartItem[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (productId: string) => void;
 }
 
-const defaultContext: CartContextType = {
-  cartCount: 0,
+export const CartContext = createContext<CartContextType>({
+  cartItems: [],
   addToCart: () => {},
   removeFromCart: () => {},
-};
+});
 
-export const CartContext = createContext<CartContextType>(defaultContext);
+const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-interface CartProviderProps {
-  children: ReactNode;
-}
+  const addToCart = (product: Product) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (item) => item.product.id === product.id
+      );
 
-export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
-  const [cartCount, setCartCount] = useState(0);
-
-  const addToCart = (amount: number) => {
-    setCartCount((prevCount) => prevCount + amount);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      } else {
+        return [...prevItems, { product, quantity: 1 }];
+      }
+    });
   };
 
-  const removeFromCart = (amount: number) => {
-    setCartCount((prevCount) => Math.max(0, prevCount - amount));
+  const removeFromCart = (productId: string) => {
+    setCartItems((prevItems) =>
+      prevItems
+        .map((item) =>
+          item.product.id === productId
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
   };
 
   return (
-    <CartContext.Provider value={{ cartCount, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );
 };
+
+export { CartProvider };

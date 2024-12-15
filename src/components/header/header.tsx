@@ -36,19 +36,18 @@ export const Header: React.FC = () => {
           </li>
         </ul>
         <div className="header__icon">
-          <Link
-            to="/cart"
-            aria-label="Shopping Cart"
-            id="openCart"
-            className="icons__shoppingbag"
-            data-bs-toggle="modal"
-            data-bs-target="#cartModal"
-          >
-            <i className="fa fa-shopping-bag"></i>
-            <span className="cart-badge badge rounded-pill" id="badgeOnCart">
-              {cartCount > 0 ? cartCount : ""}
-            </span>
-          </Link>
+          <li>
+            <Link
+              to="/cart"
+              aria-label="Shopping Cart"
+              className="icons__shoppingbag"
+            >
+              <i className="fa fa-shopping-bag"></i>
+              <span className="cart-badge badge rounded-pill" id="badgeOnCart">
+                {cartCount > 0 ? cartCount : ""}
+              </span>
+            </Link>
+          </li>
         </div>
         <button
           className="header__menu-bar"

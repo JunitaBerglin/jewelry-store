@@ -103,11 +103,22 @@
   }
 }
 
-.productsStartpageImgContainer {
+.productcontainer {
   position: relative;
   width: 100%;
   justify-content: center;
   align-items: center;
+  margin-top: 140px;
+
+  .carousel-caption {
+    background-color: rgba($color: white, $alpha: 0.6);
+    padding: 30px;
+    margin-bottom: 100px;
+
+    @include mixins.for-size(tablet) {
+      margin-bottom: 200px;
+    }
+  }
 }
 
 .startpage {
@@ -129,16 +140,6 @@
       object-fit: cover;
       height: 80vh;
       width: 80vw;
-    }
-  }
-
-  .carousel-caption {
-    background-color: rgba($color: white, $alpha: 0.6);
-    padding: 30px;
-    margin-bottom: 100px;
-
-    @include mixins.for-size(tablet) {
-      margin-bottom: 200px;
     }
   }
 

@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { StartPage } from "./pages/startpage";
-import { CartPage } from "./pages/cartpage";
 import { ProductsPage } from "./pages/productspage";
 import { AboutPage } from "./pages/aboutpage";
 import { ContactPage } from "./pages/contactpage";
 import { CartProvider } from "./context/cartcontext";
 import { ProductDetails } from "./pages/productdetails";
+import { CartPage } from "./pages/cartpage";
 
 const App: React.FC = () => {
   return (
