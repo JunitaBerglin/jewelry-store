@@ -14,13 +14,7 @@ export const Header: React.FC = () => {
   return (
     <header className="header">
       <nav className="header__nav">
-        <Link to="/">
-          <img
-            src="https://i.ibb.co/0f6g50Q/aurora-logo-2.png"
-            alt="Aurora Jewelry Logo"
-            width="200"
-          />
-        </Link>
+        <p className="header__logo">4 Jewelry Store</p>
         <ul className={`header__navbar ${menuOpen ? "active" : ""}`}>
           <li className="links">
             <Link to="/">Home</Link>

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="row">
           <div className="footer-col">
-            <h4 className="footer__title">Aurora</h4>
+            <h4 className="footer__title">4 Jewelry</h4>
             <ul className="footer__ul">
               <li className="footer__li">
                 <a href="/" className="footer__links">
@@ -67,8 +67,8 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="footer__li">
-                <a href="mailto:info@aurora.com" className="footer__links">
-                  <i className="fa fa-envelope"></i> info@aurora.com
+                <a href="mailto:info@4jewelry.com" className="footer__links">
+                  <i className="fa fa-envelope"></i> info@4jewelry.com
                 </a>
               </li>
               <li className="footer__li">
@@ -87,21 +87,21 @@ const Footer: React.FC = () => {
                 className="footer__links"
                 aria-label="Facebook"
               >
-                <i className="fab fa-facebook-f"></i> @aurorashopse
+                <i className="fab fa-facebook-f"></i> @4jewelryshop
               </a>
               <a
                 href="https://instagram.com"
                 className="footer__links"
                 aria-label="Instagram"
               >
-                <i className="fab fa-instagram"></i> @aurorashopse
+                <i className="fab fa-instagram"></i> @4jewelryshop
               </a>
               <a
                 href="https://twitter.com"
                 className="footer__links"
                 aria-label="Twitter"
               >
-                <i className="fab fa-twitter"></i> @aurorashopse
+                <i className="fab fa-twitter"></i> @4jewelryshop
               </a>
             </div>
           </div>
@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="copyright">
-          <p>Copyright © 2023 Aurora</p>
+          <p>Copyright © 2023 4 Jewelry</p>
         </div>
       </div>
     </footer>

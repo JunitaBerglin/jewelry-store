@@ -8,15 +8,15 @@ const Carousel: React.FC = () => {
         <div className="carousel-item active">
           <img
             src="https://i.ibb.co/vmgH7gs/aurora.jpg"
-            alt="Aurora"
+            alt="4 Jewelry"
             className="startpage__img"
           />
           <div className="carousel-caption">
-            <h3 className="startpage__title">Welcome to Aurora Jewelry.</h3>
+            <h3 className="startpage__title">Welcome to 4 Jewelry.</h3>
             <span className="startpage__text">
-              Aurora Jewelry has something for everyone. Come visit us today and
-              let us help you find a piece that expresses your personal style
-              and elegance.
+              4 Jewelry has something for everyone. Come visit us today and let
+              us help you find a piece that expresses your personal style and
+              elegance.
             </span>
           </div>
         </div>
