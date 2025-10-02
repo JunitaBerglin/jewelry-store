@@ -4,9 +4,10 @@ import { StartPage } from "./pages/startpage";
 import { ProductsPage } from "./pages/productspage";
 import { AboutPage } from "./pages/aboutpage";
 import { ContactPage } from "./pages/contactpage";
-import { CartProvider } from "./context/cartcontext";
+import { CartProvider } from "./context/CartProvider";
 import { ProductDetails } from "./pages/productdetails";
 import { CartPage } from "./pages/cartpage";
+import { CheckoutPage } from "./pages/checkoutpage";
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/productdetails/:id" element={<ProductDetails />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
         </main>
       </Router>

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/_header.scss";
-import useCart from "../../context/useCart";
+import { CartButton } from "../cart/cartButton";
 
 export const Header: React.FC = () => {
-  const { cartCount } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleHamburgerMenu = () => {
@@ -30,18 +29,7 @@ export const Header: React.FC = () => {
           </li>
         </ul>
         <div className="header__icon">
-          <li>
-            <Link
-              to="/cart"
-              aria-label="Shopping Cart"
-              className="icons__shoppingbag"
-            >
-              <i className="fa fa-shopping-bag"></i>
-              <span className="cart-badge badge rounded-pill" id="badgeOnCart">
-                {cartCount > 0 ? cartCount : ""}
-              </span>
-            </Link>
-          </li>
+          <CartButton />
         </div>
         <button
           className="header__menu-bar"

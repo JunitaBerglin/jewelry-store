@@ -1,4 +1,1 @@
-const Cart: React.FC = () => {
-  return <></>;
-};
-export { Cart };
+export { CartModal } from "./CartModal";

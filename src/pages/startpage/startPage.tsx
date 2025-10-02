@@ -5,6 +5,7 @@ import "../../scss/startpage.scss";
 import { Carousel } from "../../components/carousel";
 import { Spotlight } from "../../components/spotlight";
 import { ProductGrid } from "../../components/productgrid";
+import { Promo } from "../../components/promo";
 
 const StartPage: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const StartPage: React.FC = () => {
       <Header />
       <article className="main">
         <Carousel />
+        <Promo />
         <Spotlight />
         <ProductGrid />
       </article>

@@ -1,0 +1,58 @@
+// Cart Modal Styles
+.cartproduct {
+  &__img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  &__name {
+    flex: 1;
+    margin: 0 1rem;
+    font-weight: 500;
+  }
+
+  &__price {
+    margin: 0 1rem;
+    color: #6c757d;
+  }
+
+  &__amountcontainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__amount {
+    margin: 0;
+    min-width: 30px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &__add,
+  &__remove {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+.totalAmount {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+// Cart Badge in Header
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  min-width: 20px;
+  height: 20px;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  background-color: #dc3545;
+}
