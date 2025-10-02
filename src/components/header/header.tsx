@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/_header.scss";
-import useCart from "../../context/usecart";
+import useCart from "../../context/useCart";
 
 export const Header: React.FC = () => {
   const { cartCount } = useCart();

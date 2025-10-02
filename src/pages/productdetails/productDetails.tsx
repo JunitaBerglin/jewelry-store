@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Product } from "../../models/Product";
 import { products } from "../../models/productList";
-import useCart from "../../context/usecart";
+import useCart from "../../context/useCart";
 
 const ProductDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();

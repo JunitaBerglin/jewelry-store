@@ -1,5 +1,5 @@
 import React from "react";
-import useCart from "../../context/usecart";
+import useCart from "../../context/useCart";
 
 const CartPage: React.FC = () => {
   const { cartItems, addToCart, removeFromCart } = useCart();
